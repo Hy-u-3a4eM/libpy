@@ -1,0 +1,17 @@
+[package]
+name = "libpy"
+version = "0.1.0"
+authors = ["Artur za4emsu@gmail.com"]
+edition = "2021"
+description = "This library imports functions from the python standard library."
+homepage = "https://github.com/Hy-u-3a4eM/libpy"
+repository = "https://github.com/Hy-u-3a4eM/libpy"
+readme = "README.md"
+keywords = ["input"]
+license = "MIT OR Apache-2.0"
+
+[lib]
+name = "libpy"
+path = "src/lib.rs"
+
+[dependencies]
