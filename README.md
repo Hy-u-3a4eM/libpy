@@ -4,7 +4,7 @@ This library imports functions from the python standard library.
 ## Examples
 ### input! macro
 ```rust
-use libpy::std::input;
+use libpy::input;
 
 fn main() {
     let a = input!();
@@ -17,7 +17,7 @@ fn main() {
 
 ### int! macro
 ```rust
-use libpy::std::int;
+use libpy::int;
 
 fn main() {
     let a = int!();

@@ -1,6 +1,6 @@
-//! This is my first crate. Its task is to facilitate the programmer's work by allowing the use of the well-known function "input()".
+//! This is my first crate. Its task is to facilitate the programmer's work by allowing the use of the well-known function `input()`.
 //!
-//! This works the same way as in python, only you need to write '!', since this is a macro: "input!()" or "input!("Enter your name: ")".
+//! This works the same way as in python, only you need to write `!`, since this is a macro: `input!()` or `input!("Enter your name: ")`.
 
 pub mod std {
     /// Outputs (or not) text and awaiting input.
