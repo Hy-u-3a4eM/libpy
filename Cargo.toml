@@ -1,6 +1,6 @@
 [package]
 name = "libpy"
-version = "0.1.0"
+version = "0.2.0"
 authors = ["Artur za4emsu@gmail.com"]
 edition = "2021"
 description = "This library imports functions from the python standard library."

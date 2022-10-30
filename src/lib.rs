@@ -2,31 +2,41 @@
 //!
 //! This works the same way as in python, only you need to write '!', since this is a macro: "input!()" or "input!("Enter your name: ")".
 
-/// Outputs (or not) text and awaiting input.
+pub mod std {
+    /// Outputs (or not) text and awaiting input.
+    #[macro_export]
+    macro_rules! input {
+        () => {{
+            use std::io::{stdin, self, Write};
 
-//use std::io::{stdin, self, Write};
+            let mut buf = String::new();
+            stdin().read_line(&mut buf).unwrap();
+            buf
+        }};
 
-/// Outputs (or not) text and awaiting input.
-#[macro_export]
-macro_rules! input {
-    () => {{
-        use std::io::{stdin, self, Write};
+        ($arg:tt) => {{
+            use std::io::{stdin, self, Write};
 
-        let mut buf = String::new();
-        stdin().read_line(&mut buf).unwrap();
-        buf
-    }};
+            let text: &str = $arg;
 
-    ($arg:tt) => {{
-        use std::io::{stdin, self, Write};
+            print!("{}", text);
+            io::stdout().flush().expect("flush error");
 
-        let text: &str = $arg;
+            let mut buf = String::new();
+            stdin().read_line(&mut buf).unwrap();
+            buf
+        }};
+    }
 
-        print!("{}", text);
-        io::stdout().flush().expect("flush error");
+    /// Parses to int.
+    #[macro_export]
+    macro_rules! int {
+        () => {
+            0
+        };
 
-        let mut buf = String::new();
-        stdin().read_line(&mut buf).expect("read line error");
-        buf
-    }};
+        ($arg:expr) => {{
+            $arg.trim().parse::<isize>().unwrap()
+        }};
+    }
 }
